@@ -1,0 +1,36 @@
+{
+    "name": {
+        "zh-cn": "行空板IO扩展板",
+        "en": "IO Extender for UNIHIKER"
+    },
+    "description": {
+        "zh-cn": "专为行空板设计的IO扩展板，可提供更多模拟量和PWM接口",
+        "en": "Provides more analog and PWM interfaces."
+    },
+    "author": "cx",
+    "email": "unihiker@dfrobot.com",
+    "license": "MIT",
+    "isBoard": false,
+    "color": "#f08080",
+    "id": "dfr1231",
+    "platform": [
+        "win",
+        "mac",
+        "web",
+        "linux"
+    ],
+    "version": "0.1.0",
+    "asset": {
+        "arduinoC": {
+            "dir": "arduinoC/",
+            "main": "main.ts",
+            "dependencies": {},
+            "board": [
+                "arduino",
+                "esp32",
+                "microbit",
+                "esp32s3bit"
+            ]
+        }
+    }
+}

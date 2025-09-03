@@ -1,0 +1,21 @@
+{
+    "DFR1231.myBlock0|block": "读取引脚[ec]的[mode]",
+    "DFR1231.myBlock1|block": "设置引脚[ec]输出[v]",
+    "DFR1231.myBlock2|block": "设置引脚[s] 90度舵机为[dir]度",
+    "DFR1231.myBlock3|block": "设置引脚[s] 360度舵机以[speedservo]%的速度[oriservo]",
+
+    "DFR1231.v.HIGH|menu": "高电平",
+    "DFR1231.v.LOW|menu": "低电平",
+    "DFR1231.dir.Forward|menu": "前进",
+    "DFR1231.dir.Backward|menu": "后退",
+    "DFR1231.mode.Analog|menu": "模拟值",
+    "DFR1231.mode.Digital|menu": "数字值",
+    "DFR1231.mode.​DHT11 temperature (°C)​|menu": "​DHT11  温度℃",
+    "DFR1231.mode.​DHT11 humidity (%RH)​|menu": "​DHT11  湿度%RH",
+    "DFR1231.mode.​​DHT22 temperature (°C)​|menu": "DHT22  温度℃",
+    "DFR1231.mode.DHT22 humidity (%RH)​|menu": "​DHT22  湿度%RH",
+    "DFR1231.mode.​DS18B20 temperature (°C)​​|menu": "​DS18B20 温度℃",
+    "DFR1231.oriservo.CW|menu": "正转",
+    "DFR1231.oriservo.CCW|menu": "反转",
+    "DFR1231.oriservo.Stop|menu": "停止"
+}

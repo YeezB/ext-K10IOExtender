@@ -1,0 +1,138 @@
+[
+    {
+        "id": 4,
+        "myBlock": "myBlock4",
+        "name": "设置引脚[s]舵机为[dir]度",
+        "type": "command",
+        "code": "\n    //% block=\"设置引脚[s]舵机为[dir]度\" blockType=\"command\"\n    //% s.shadow=\"dropdown\" s.options=\"s\" \n    //% dir.shadow=\"angle\" dir.defl=90\n    export function myBlock4(parameter: any, block: any) {\n        let s= parameter.s.code\n        let dir= parameter.dir.code\n        Generator.addInclude(\"myBlock1500\",`#include \"DFRobot_UnihikerExpansion.h\"`)\n        Generator.addObject(\"myBlock8472\",`DFRobot_UnihikerExpansion_I2C eunihiker(&Wire);`,\"\")\n        Generator.addSetup(\"myBlock7257\",`while(!eunihiker.begin()){delay(1000);} `)\n        Generator.addCode(`eunihiker.setServoAngle(${s}, ${dir});`)\n    }",
+        "param_types": [
+            "dropdown",
+            "angle"
+        ],
+        "default_values": [
+            "S0:eServo0,S1:eServo1,S2:eServo2,S3:eServo3,S4:eServo4,S5:eServo5",
+            "90"
+        ],
+        "import_code": "#include \"DFRobot_UnihikerExpansion.h\"",
+        "init_code": "DFRobot_UnihikerExpansion_I2C eunihiker(&Wire);",
+        "add_code": "eunihiker.setServoAngle(${s}, ${dir});",
+        "code_setup": "while(!eunihiker.begin()){delay(1000);} "
+    },
+    {
+        "id": 4,
+        "myBlock": "myBlock4",
+        "name": "设置RGB[num]颜色[color]亮度[brightness]",
+        "type": "command",
+        "code": "\n    //% block=\"设置RGB[num]颜色[color]亮度[brightness]\" blockType=\"command\"\n    //% num.shadow=\"dropdown\" num.options=\"num\" \n    //% color.shadow=\"colorPalette\" color.params.column=7\n    //% color.params.colorsFunc=\"getColorsFunc_\" \n    //% brightness.shadow=\"number\" brightness.defl=10\n    export function myBlock4(parameter: any, block: any) {\n        let num= parameter.num.code\n        let color= parameter.color.code\n        let brightness= parameter.brightness.code\n        Generator.addInclude(\"myBlock1901\",`#include \"DFRobot_UnihikerExpansion.h\"\n`)\n        Generator.addObject(\"myBlock5340\",`DFRobot_UnihikerExpansion_I2C eunihiker(&Wire);`,\"\")\n        Generator.addSetup(\"myBlock1827\",`while(!eunihiker.begin()){delay(1000);} `)\n        Generator.addCode(`\nstatic uint32_t led[2] = {0xff0000, 0xff0000};\nled${num} = ${color}\neunihiker.setWS2812((uint32_t*)led, ${brightness});`)\n    }",
+        "param_types": [
+            "dropdown",
+            "colorPalette",
+            "number"
+        ],
+        "default_values": [
+            "0:0,1:1",
+            "7",
+            "10"
+        ],
+        "import_code": "#include \"DFRobot_UnihikerExpansion.h\"\n",
+        "init_code": "DFRobot_UnihikerExpansion_I2C eunihiker(&Wire);",
+        "add_code": "\nstatic uint32_t led[2] = {0xff0000, 0xff0000};\nled${num} = ${color}\neunihiker.setWS2812((uint32_t*)led, ${brightness});",
+        "code_setup": "while(!eunihiker.begin()){delay(1000);} "
+    },
+    {
+        "id": 4,
+        "myBlock": "myBlock3",
+        "name": "设置电机[motor]以[speed]的速度[dir]",
+        "type": "command",
+        "code": "\n    //% block=\"设置电机[motor]以[speed]的速度[dir]\" blockType=\"command\"\n    //% motor.shadow=\"dropdown\" motor.options=\"motor\" \n    //% speed.shadow=\"number\" speed.defl=200\n    //% dir.shadow=\"dropdown\" dir.options=\"dir\" \n    export function myBlock3(parameter: any, block: any) {\n        let motor= parameter.motor.code\n        let speed= parameter.speed.code\n        let dir= parameter.dir.code\n        Generator.addInclude(\"myBlock2548\",`#include \"DFRobot_UnihikerExpansion.h\"`)\n        Generator.addObject(\"myBlock6153\",`DFRobot_UnihikerExpansion_I2C eunihiker(&Wire);`,\"\")\n        Generator.addSetup(\"myBlock5375\",`while(!eunihiker.begin()){delay(1000);} \neunihiker.setMotorPeriod(eMotor1_2, 255);\neunihiker.setMotorPeriod(eMotor3_4, 255);`)\n        Generator.addCode(`eunihiker.motorRun(${motor},${speed},${dir});`)\n    }",
+        "param_types": [
+            "dropdown",
+            "number",
+            "dropdown"
+        ],
+        "default_values": [
+            "M1:eMotor1,M2:eMotor2,M3:eMotor3,M4:eMotor4",
+            "200",
+            "前进:1,后退:0"
+        ],
+        "import_code": "#include \"DFRobot_UnihikerExpansion.h\"",
+        "init_code": "DFRobot_UnihikerExpansion_I2C eunihiker(&Wire);",
+        "add_code": "eunihiker.motorRun(${motor},${speed},${dir});",
+        "code_setup": "while(!eunihiker.begin()){delay(1000);} \neunihiker.setMotorPeriod(eMotor1_2, 255);\neunihiker.setMotorPeriod(eMotor3_4, 255);"
+    },
+    {
+        "id": 4,
+        "myBlock": "myBlock4",
+        "name": "读取红外接收值",
+        "type": "reporter",
+        "code": "\n    //% block=\"读取红外接收值\" blockType=\"reporter\"\n    export function myBlock4(parameter: any, block: any) {\n        Generator.addInclude(\"myBlock169\",`#include \"DFRobot_UnihikerExpansion.h\"`)\n        Generator.addObject(\"myBlock220\",`DFRobot_UnihikerExpansion_I2C eunihiker(&Wire);`,\"\")\n        Generator.addSetup(\"myBlock4360\",`while(!eunihiker.begin()){delay(1000);} `)\n        Generator.addCode(`eunihiker.getIRData()`)\n    }",
+        "param_types": [],
+        "default_values": [],
+        "import_code": "#include \"DFRobot_UnihikerExpansion.h\"",
+        "init_code": "DFRobot_UnihikerExpansion_I2C eunihiker(&Wire);",
+        "add_code": "eunihiker.getIRData()",
+        "code_setup": "while(!eunihiker.begin()){delay(1000);} "
+    },
+    {
+        "id": 4,
+        "myBlock": "myBlock3",
+        "name": "红外发射16进制数据[hex]",
+        "type": "command",
+        "code": "\n    //% block=\"红外发射16进制数据[hex]\" blockType=\"command\"\n    //% hex.shadow=\"normal\" hex.defl=12345678\n    export function myBlock3(parameter: any, block: any) {\n        let hex= parameter.hex.code\n        Generator.addInclude(\"myBlock3354\",`#include \"DFRobot_UnihikerExpansion.h\"`)\n        Generator.addObject(\"myBlock9195\",`DFRobot_UnihikerExpansion_I2C eunihiker(&Wire);`,\"\")\n        Generator.addSetup(\"myBlock9341\",`while(!eunihiker.begin()){delay(1000);} `)\n        Generator.addCode(`eunihiker.sendIR(0x${hex});`)\n    }",
+        "param_types": [
+            "normal"
+        ],
+        "default_values": [
+            "12345678"
+        ],
+        "import_code": "#include \"DFRobot_UnihikerExpansion.h\"",
+        "init_code": "DFRobot_UnihikerExpansion_I2C eunihiker(&Wire);",
+        "add_code": "eunihiker.sendIR(0x${hex});",
+        "code_setup": "while(!eunihiker.begin()){delay(1000);} "
+    },
+    {
+        "id": 4,
+        "myBlock": "myBlock4",
+        "name": "设置[ec]输出[v]",
+        "type": "command",
+        "code": "\n    //% block=\"设置[ec]输出[v]\" blockType=\"command\"\n    //% ec.shadow=\"dropdown\" ec.options=\"ec\" \n    //% v.shadow=\"dropdown\" v.options=\"v\" \n    export function myBlock4(parameter: any, block: any) {\n        let ec= parameter.ec.code\n        let v= parameter.v.code\n        Generator.addInclude(\"myBlock5636\",`#include \"DFRobot_UnihikerExpansion.h\"`)\n        Generator.addObject(\"myBlock1065\",`DFRobot_UnihikerExpansion_I2C eunihiker(&Wire);`,\"\")\n        Generator.addSetup(\"myBlock1229\",`while(!eunihiker.begin()){delay(1000);} `)\n        Generator.addCode(`eunihiker.setGpioState(${ec}, ${v});`)\n    }",
+        "param_types": [
+            "dropdown",
+            "dropdown"
+        ],
+        "default_values": [
+            "C0:ec0,C1:ec1,C2:ec2,C3:ec3,C4:ec4,C5:ec5",
+            "高电平:eHIGH,低电平:eLOW"
+        ],
+        "import_code": "#include \"DFRobot_UnihikerExpansion.h\"",
+        "init_code": "DFRobot_UnihikerExpansion_I2C eunihiker(&Wire);",
+        "add_code": "eunihiker.setGpioState(${ec}, ${v});",
+        "code_setup": "while(!eunihiker.begin()){delay(1000);} "
+    },
+    {
+        "id": 6,
+        "myBlock": "myBlock5",
+        "name": "读取超声波传感器距离(cm)",
+        "type": "command",
+        "code": "\n    //% block=\"读取超声波传感器距离(cm)\" blockType=\"command\"\n    export function myBlock5(parameter: any, block: any) {\n        Generator.addInclude(\"myBlock4267\",`#include \"DFRobot_UnihikerExpansion.h\"`)\n        Generator.addObject(\"myBlock1796\",`DFRobot_UnihikerExpansion_I2C eunihiker(&Wire);`,\"\")\n        Generator.addSetup(\"myBlock5202\",`while(!eunihiker.begin()){delay(1000);} `)\n        Generator.addCode(`eunihiker.getSr04Distance()`)\n    }",
+        "param_types": [],
+        "default_values": [],
+        "import_code": "#include \"DFRobot_UnihikerExpansion.h\"",
+        "init_code": "DFRobot_UnihikerExpansion_I2C eunihiker(&Wire);",
+        "add_code": "eunihiker.getSr04Distance()",
+        "code_setup": "while(!eunihiker.begin()){delay(1000);} "
+    },
+    {
+        "id": 6,
+        "myBlock": "myBlock6",
+        "name": "读取电池电量(%)",
+        "type": "command",
+        "code": "\n    //% block=\"读取电池电量(%)\" blockType=\"command\"\n    export function myBlock6(parameter: any, block: any) {\n        Generator.addInclude(\"myBlock1167\",`#include \"DFRobot_UnihikerExpansion.h\"`)\n        Generator.addObject(\"myBlock8651\",`DFRobot_UnihikerExpansion_I2C eunihiker(&Wire);`,\"\")\n        Generator.addSetup(\"myBlock7873\",`while(!eunihiker.begin()){delay(1000);} `)\n        Generator.addCode(`eunihiker.getBattery()`)\n    }",
+        "param_types": [],
+        "default_values": [],
+        "import_code": "#include \"DFRobot_UnihikerExpansion.h\"",
+        "init_code": "DFRobot_UnihikerExpansion_I2C eunihiker(&Wire);",
+        "add_code": "eunihiker.getBattery()",
+        "code_setup": "while(!eunihiker.begin()){delay(1000);} "
+    }
+]

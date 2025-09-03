@@ -1,0 +1,150 @@
+{
+    "v": {
+        "menu": [
+            [
+                "HIGH",
+                "eHIGH"
+            ],
+            [
+                "LOW",
+                "eLOW"
+            ]
+        ]
+    },
+    "motor": {
+        "menu": [
+            [
+                "M1",
+                "eMotor1"
+            ],
+            [
+                "M2",
+                "eMotor2"
+            ],
+            [
+                "M3",
+                "eMotor3"
+            ],
+            [
+                "M4",
+                "eMotor4"
+            ],
+            [
+                "ALL",
+                "eMotorall"
+            ]
+        ]
+    },
+    "num": {
+        "menu": [
+            [
+                "0",
+                "0"
+            ],
+            [
+                "1",
+                "1"
+            ]
+        ]
+    },
+    "s": {
+        "menu": [
+            [
+                "S0",
+                "eServo0"
+            ],
+            [
+                "S1",
+                "eServo1"
+            ],
+            [
+                "S2",
+                "eServo2"
+            ],
+            [
+                "S3",
+                "eServo3"
+            ]
+        ]
+    },
+    "dir": {
+        "menu": [
+            [
+                "Forward",
+                "1"
+            ],
+            [
+                "Backward",
+                "0"
+            ]
+        ]
+    },
+    "ec": {
+        "menu": [
+            [
+                "C0",
+                "eC0"
+            ],
+            [
+                "C1",
+                "eC1"
+            ],
+            [
+                "C2",
+                "eC2"
+            ],
+            [
+                "C3",
+                "eC3"
+            ]
+        ]
+    },
+    "mode": {
+        "menu": [
+            [
+                "Analog",
+                "eADC"
+            ],
+            [
+                "Digital",
+                "eReadGpio"
+            ],
+            [
+                "​DHT11 temperature (°C)​",
+                "eDHT11"
+            ],
+            [
+                "​DHT11 humidity (%RH)​",
+                "eDHT11_hum"
+            ],
+            [
+                "​​DHT22 temperature (°C)​",
+                "eDHT22"
+            ],
+            [
+                "DHT22 humidity (%RH)​",
+                "eDHT22_hum"
+            ],
+            [
+                "​DS18B20 temperature (°C)​​",
+                "eDS18B20"
+            ]
+        ]
+    },
+    "oriservo": {
+        "menu": [
+            [
+                "CW",
+                "eForward"
+            ],
+            [
+                "CCW",
+                "eBackward"
+            ],
+            [
+                "Stop",
+                "eStop"
+            ]
+        ]
+    }
+}
