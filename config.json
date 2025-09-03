@@ -4,8 +4,8 @@
         "en": "IO Extender for UNIHIKER"
     },
     "description": {
-        "zh-cn": "专为行空板设计的IO扩展板，可提供更多模拟量和PWM接口",
-        "en": "Provides more analog and PWM interfaces."
+        "zh-cn": "DFR1231: 专为行空板设计的IO扩展板，可提供更多模拟量和PWM接口",
+        "en": "DFR1231: Provides more analog and PWM interfaces."
     },
     "author": "cx",
     "email": "unihiker@dfrobot.com",
